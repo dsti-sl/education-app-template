@@ -1,0 +1,128 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DSTI School Optimization</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" language="javascript" src="./public/data.json"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.8/themes/default/style.min.css" />
+
+
+<style>
+
+.navbar-default {
+background-color: #FFFFFF;
+border-bottom: 0px;
+border-top: 0px;
+border-left: 0px;
+border-right: 0px;
+border-radius:0;
+}
+
+.navbar-brand {
+height: 30px;
+padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 1px;
+  width: auto;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+.one {
+    width: 300px;
+    height: 10px;
+    float: left;
+}
+.two {
+   width: 100%;
+   height: 900px;
+   /* width: calc(100% - 50px); */
+   /* height: calc(100vh - 100px); */
+   border: 1px solid #ccc;
+}
+#tree {
+  height: 170px;
+  background-color: 'red';
+}
+
+</style>
+</head>
+<body>
+<div id="main">
+<!-- <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <a class="navbar-brand"><img src="mapbox-logo-black.png" alt="mapbox"></a>
+    </div>
+  </div>
+</nav> -->
+
+<div id="Viz" class="container-fluid">
+<div id ="DashboardsTop" class="row">
+<div class="col-lg-12">
+<section class = "container">
+  <br>
+  <div class="jumbotron mt-1" style="max-height:500px">
+      <h3>Distance between communities and schools</h3>
+      <p class="lead">
+        <span id='desc'></span>
+      </p>
+    </div>
+  </div>
+  <div id='tree' class="one">
+    <div id="jstree">
+        <ul>
+          <li id='national' selected>National</li>
+          <li id='region'>Region</li>
+            <li id='district'>District
+              <ul>
+                <li id='district-sss'>Secondary school</li>
+              </ul>
+            <li id='chiefdom'>Chiefdom</li>
+            <li id='section'>Section</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <iframe id='kepler' class="two" src="https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/s/thql75demlprhai/keplergl_communities_schools_and_roads.json" frameBorder="0"></iframe>
+  </div>
+
+</section>
+</body>
+<script>
+
+
+$(function () { $('#jstree').jstree(); });
+  setTimeout(() => {
+    $('#jstree').jstree('select_node', 'national');
+  }, 1000)
+
+  $('#jstree').on("changed.jstree", function (e, data) {
+  var term = data.node.id
+  console.log(term, records[term], data, 'tttt')
+  var prefix = "https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/s/"
+  let url = prefix + records[term].url + '.json'
+  console.log(url)
+  $('#kepler').attr('src', url);
+  $('#desc').html(records[term].desc)
+});
+
+$('#jstree').on('select_node.jstree', function (e, data) {
+    data.instance.toggle_node(data.node);
+});
+</script>
+</html>

@@ -1,0 +1,26 @@
+var records = {
+  "national": {
+    "url": "vqtk4y5h6nymigy/communities-schools-roads",
+    "desc": "This map shows over 12 thousand community points throughout Sierra Leone. Use the controls on the lower left of the map to view schools and the national road network. Click the items in the menu below to see more granular boundary levels."
+  },
+  "region": {
+    "url": "3lmqb8rtdgg97rd/region-avg-dist-to-school",
+    "desc": "Each region is colored according to the average distance between a community and its nearest school. Height is by population."
+  },
+  "district": {
+    "url": "3720u8cln1nkq42/district-avg-dist-to-school",
+    "desc": "Each district is colored according to the average distance between a community and its nearest school. Height is by population."
+  },
+  "district-sss": {
+    "url": "3lmqb8rtdgg97rd/region-avg-dist-to-school",
+    "desc": "Each district is colored according to the average distance between a community and its nearest secondary school. Height is by population."
+  },
+  "chiefdom": {
+    "url": "149sl8n8irlf9ju/chiefdom-avg-dist-to-school",
+    "desc": "Each chiefdom is colored according to the average distance between a community and its nearest school. Height is by population."
+  },
+  "section": {
+    "url": "egtc9wjctz22oj9/section-avg-dist-to-school",
+    "desc": "Each section is colored according to the average distance between a community and its nearest school. Height is by population."
+  },
+}
