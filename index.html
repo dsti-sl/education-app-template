@@ -15,7 +15,6 @@
 
 
 <style>
-
 .navbar-default {
 background-color: #FFFFFF;
 border-bottom: 0px;
@@ -56,6 +55,33 @@ padding: 0px;
   height: 170px;
   background-color: 'red';
 }
+@media (max-width: 767px) {
+    .banner {
+      width: 400px;
+    }
+    #bannerCell {
+      text-align: center;
+      padding-right: 30px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .banner {
+      width: 700px;
+    }
+    #bannerCell {
+      text-align: right;
+    }
+}
+@media (min-width: 1025px) {
+    .banner {
+      width: 900px;
+    }
+    #bannerCell {
+      text-align: right;
+    }
+}
+
+}
 
 </style>
 </head>
@@ -68,40 +94,46 @@ padding: 0px;
     </div>
   </div>
 </nav> -->
-
-<div id="Viz" class="container-fluid">
-<div id ="DashboardsTop" class="row">
-<div class="col-lg-12">
-<section class = "container">
-  <br>
-  <div class="jumbotron mt-1" style="max-height:500px">
-      <h3>Distance between communities and schools</h3>
-      <p class="lead">
-        <span id='desc'></span>
-      </p>
-    </div>
-  </div>
-  <div id='tree' class="one">
-    <div id="jstree">
-        <ul>
-          <li id='national' selected>National</li>
-          <li id='region'>Region</li>
-            <li id='district'>District
-              <ul>
-                <li id='district-sss'>Secondary school</li>
-              </ul>
-            <li id='chiefdom'>Chiefdom</li>
-            <li id='section'>Section</li>
-        </ul>
+  <div id="Viz" class="container-fluid">
+    <div id ="DashboardsTop" class="row">
+      <div class="col-lg-12">
+        <section class = "container">
+          <br>
+          <div class="jumbotron mt-1" style="max-height:500px; width:100%">
+            <h3>Distance between communities and schools</h3>
+            <p class="lead">
+              <span id='desc'></span>
+            </p>
+          </div>
+          <div class="container">
+            <div class="row">
+            <div class="row">
+              <div class="col-sm">
+                <div id='tree' class="one">
+                  <div id="jstree">
+                    <ul>
+                      <li id='national' selected>National</li>
+                      <li id='region'>Region</li>
+                      <li id='district'>District
+                        <ul>
+                          <li id='district-sss'>Secondary school</li>
+                        </ul>
+                      <li id='chiefdom'>Chiefdom</li>
+                      <li id='section'>Section</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div id='bannerCell' class="col-sm">
+                <img  class='banner' src = './public/admin-levels.jpg'  />
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
-
-  <div>
-    <iframe id='kepler' class="two" src="https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/s/thql75demlprhai/keplergl_communities_schools_and_roads.json" frameBorder="0"></iframe>
-  </div>
-
-</section>
+  <iframe id='kepler' class="two" src="https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/s/thql75demlprhai/keplergl_communities_schools_and_roads.json" frameBorder="0"></iframe>
 </body>
 <script>
 
