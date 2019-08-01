@@ -75,30 +75,16 @@ padding: 0px;
 <section class = "container">
   <br>
   <div class="jumbotron mt-1" style="max-height:500px">
-      <h3>Distance between communities and schools</h3>
+      <h3>School Coverage</h3>
+      The map below shows the coverage of each senior secondary school in Sierra Leone in the form of a <a href='https://en.wikipedia.org/wiki/Voronoi_diagram'>voronoi tessellation</a>. Each dot, one per polygon, represents the location of a school, while the color represents its approval status. A community located within a polygon is closer to its school than any other. The color of each polygon shows the population size. Visualization by <a href='https://www.linkedin.com/in/mkphuthi/'>Keith Phuthi</a>.
+
       <p class="lead">
         <span id='desc'></span>
       </p>
     </div>
   </div>
-  <div id='tree' class="one">
-    <div id="jstree">
-        <ul>
-          <li id='national' selected>National</li>
-          <li id='region'>Region</li>
-            <li id='district'>District
-              <ul>
-                <li id='district-sss'>Secondary school</li>
-              </ul>
-            <li id='chiefdom'>Chiefdom</li>
-            <li id='section'>Section</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
   <div>
-    <iframe id='kepler' class="two" src="https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/s/thql75demlprhai/keplergl_communities_schools_and_roads.json" frameBorder="0"></iframe>
+    <iframe id='kepler' class="two" src="https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/s/c6vnqwc5aol55vs/keplergl_ouxq39t.json" frameBorder="0"></iframe>
   </div>
 
 </section>
