@@ -30,7 +30,7 @@ height: 30px;
 padding: 0px;
 }
 .navbar-brand>img {
-  height: 100%;
+  height: 50px;
   padding: 1px;
   width: auto;
 }
@@ -56,18 +56,27 @@ padding: 0px;
   height: 170px;
   background-color: 'red';
 }
+@media (max-width: 767px) {
+  .navbar-brand>img {
+    height: 35px;
+    padding: 1px;
+    width: auto;
+  }
+}
+
 
 </style>
 </head>
 <body>
 <div id="main">
-<!-- <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-    <a class="navbar-brand"><img src="mapbox-logo-black.png" alt="mapbox"></a>
-    </div>
+<nav class="navbar navbar-default">
+  <div class="pull-left container-fluid">
+    <a class="navbar-brand"><img src="./public/file.jpeg" alt="DSTI" ></a>
   </div>
-</nav> -->
+  <div class="pull-right container-fluid">
+    <a class="navbar-brand"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHxCPxy7nZx2_BHVmDSV1mS042LoetwT-o83u7NUwsPUMk3gqe" alt="DSTI"></a>
+  </div>
+</nav>
 
 <div id="Viz" class="container-fluid">
 <div id ="DashboardsTop" class="row">
@@ -75,16 +84,30 @@ padding: 0px;
 <section class = "container">
   <br>
   <div class="jumbotron mt-1" style="max-height:500px">
-      <h3>School Coverage</h3>
+      <!-- <h3>School Coverage</h3>
       The map below shows the coverage of each senior secondary school in Sierra Leone in the form of a <a href='https://en.wikipedia.org/wiki/Voronoi_diagram'>voronoi tessellation</a>. Each dot, one per polygon, represents the location of a school, while the color represents its approval status. A community located within a polygon is closer to its school than any other. The color of each polygon shows the population size. Visualization by <a href='https://www.linkedin.com/in/mkphuthi/'>Keith Phuthi</a>.
+      <p class="lead"> -->
+      <h3>School Mapping</h3>
+      The map below shows school locations throughout Freetown. The radius of each dot reprents the total number of students enrolled in the school. The color represts the type of school:
+        <br><br>
+        <span style='background-color: #9B1BBA; padding-right: 22px ; border: solid 1px black;'></span>&nbsp; junior secondary
+        <br>
+        <span style='background-color: #213E9A; padding-right: 22px ; border: solid 1px black;'></span>&nbsp; pre-primary
+        <br>
+        <span style='background-color: #DA102C; padding-right: 22px ; border: solid 1px black;'></span>&nbsp; primary
+        <br>
+        <span style='background-color: #F9E200; padding-right: 22px ; border: solid 1px black;'></span>&nbsp; senior secondary
+        <br><br>
+          The size of the radius of each point represents the total number of enrolled students at that school.
 
       <p class="lead">
+
         <span id='desc'></span>
       </p>
     </div>
   </div>
   <div>
-    <iframe id='kepler' class="two" src="https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/s/c6vnqwc5aol55vs/keplergl_ouxq39t.json" frameBorder="0"></iframe>
+    <iframe id='kepler' class="two" src="https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/s/m981iiewwxx3v8x/school-buses.json" frameBorder="0"></iframe>
   </div>
 
 </section>
