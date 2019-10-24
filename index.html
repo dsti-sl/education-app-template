@@ -6,7 +6,6 @@
 <title>DSTI School Optimization</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" language="javascript" src="./public/data.json"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -96,26 +95,4 @@ padding: 0px;
 
 </section>
 </body>
-<script>
-
-
-$(function () { $('#jstree').jstree(); });
-  setTimeout(() => {
-    $('#jstree').jstree('select_node', 'national');
-  }, 1000)
-
-  $('#jstree').on("changed.jstree", function (e, data) {
-  var term = data.node.id
-  console.log(term, records[term], data, 'tttt')
-  var prefix = "https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/s/"
-  let url = prefix + records[term].url + '.json'
-  console.log(url)
-  $('#kepler').attr('src', url);
-  $('#desc').html(records[term].desc)
-});
-
-$('#jstree').on('select_node.jstree', function (e, data) {
-    data.instance.toggle_node(data.node);
-});
-</script>
 </html>
