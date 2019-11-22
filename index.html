@@ -45,15 +45,12 @@ padding: 0px;
 }
 .two {
    width: 100%;
-   height: 900px;
+   height: 500px;
    /* width: calc(100% - 50px); */
    /* height: calc(100vh - 100px); */
    border: 1px solid #ccc;
 }
-#tree {
-  height: 170px;
-  background-color: 'red';
-}
+
 @media (max-width: 767px) {
   .navbar-brand>img {
     height: 35px;
@@ -67,11 +64,11 @@ padding: 0px;
 <body>
 <div id="main">
   <nav class="navbar navbar-default">
-    <div class="pull-left container-fluid">
-      <a class="navbar-brand"><img src="./public/file.jpeg" alt="DSTI" ></a>
+    <div class="pull-left container-fluid" style='padding: 20px'>
+      <a class="navbar-brand"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHxCPxy7nZx2_BHVmDSV1mS042LoetwT-o83u7NUwsPUMk3gqe" alt="DSTI"></a>
     </div>
     <div class="pull-right container-fluid">
-      <a class="navbar-brand"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHxCPxy7nZx2_BHVmDSV1mS042LoetwT-o83u7NUwsPUMk3gqe" alt="DSTI"></a>
+      <a class="navbar-brand"></a>
     </div>
   </nav>
 
@@ -80,17 +77,26 @@ padding: 0px;
 <div class="col-lg-12">
 <section class = "container">
   <br>
-  <div class="jumbotron mt-1" style="max-height:500px">
-      <h3>School Coverage</h3>
-      The map below shows the coverage of each senior secondary school in Sierra Leone in the form of a <a href='https://en.wikipedia.org/wiki/Voronoi_diagram'>voronoi tessellation</a>. Each dot, one per polygon, represents the location of a school, while the color represents its approval status. A community located within a polygon is closer to its school than any other. The color of each polygon shows the population size. Visualization by <a href='https://www.linkedin.com/in/mkphuthi/'>Keith Phuthi</a>.
-
+  <div class="jumbotron mt-1">
+      <h3></h3>
       <p class="lead">
-        <span id='desc'></span>
+        This is an animated visualization of Ebola confirmed cases in the North Kivu Ebola Outbreak in the Democratic Republic of the Congo (DRC).
+        <ul>
+          <li>
+            data source: <a href='https://data.humdata.org/dataset/ebola-cases-and-deaths-drc-north-kivu'>The Humanitarian Data Exchange</a>
+          </li>
+          <li>
+            <a href='https://github.com/mikefab/viz4good'>code base</a>
+          </li>
+          <li>
+            <a href='https://data.humdata.org/dataset/drc-health-facilities#data-resources'>shapefiles</a>
+          </li>
+        </ul>
       </p>
     </div>
   </div>
-  <div>
-    <iframe id='kepler' class="two" src="https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/s/c6vnqwc5aol55vs/keplergl_ouxq39t.json" frameBorder="0"></iframe>
+  <div style='padding: 10px;'>
+    <iframe id='kepler' class="two" src="http://ec2-3-19-63-187.us-east-2.compute.amazonaws.com/" frameBorder="0"></iframe>
   </div>
 
 </section>
